@@ -1,3 +1,7 @@
 a=10
 b=4
 print(a+b)
+ # add new line 
+c=0
+d=1
+print (c+d)
