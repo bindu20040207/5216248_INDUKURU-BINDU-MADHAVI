@@ -1,1 +1,2 @@
 # 5216248\_INDUKURU-BINDU-MADHAVI
+![alt text](<Screenshot 2025-07-23 213014.png>)
