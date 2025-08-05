@@ -1,4 +1,4 @@
-MIN-MAX-SOLUTION
+# MIN-MAX-SOLUTION
 
 
 #!/bin/python3
