@@ -1,4 +1,4 @@
-# COUNTING SORT 1-SOLUTION
+/* COUNTING SORT 1-SOLUTION */
 
 
 #include <assert.h>

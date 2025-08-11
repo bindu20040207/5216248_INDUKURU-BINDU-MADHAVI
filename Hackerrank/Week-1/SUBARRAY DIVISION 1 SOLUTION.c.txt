@@ -1,4 +1,4 @@
-# SUBARRAY DIVISION 1 SOLUTION
+/* SUBARRAY DIVISION 1 SOLUTION */
 
 
 #include <assert.h>

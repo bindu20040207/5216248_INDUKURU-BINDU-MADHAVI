@@ -1,4 +1,4 @@
-# PERMUTING TWO ARRAYS SOLUTION
+ /* PERMUTING TWO ARRAYS SOLUTION */
 
 
 #include <assert.h>

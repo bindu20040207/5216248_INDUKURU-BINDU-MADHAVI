@@ -1,4 +1,4 @@
-#LONELY ELEMENT SOLUTION
+/* LONELY ELEMENT SOLUTION */
 
 #include <assert.h>
 #include <ctype.h>

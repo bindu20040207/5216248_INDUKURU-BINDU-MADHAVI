@@ -1,4 +1,4 @@
-#FLIPPING BITS
+ /* FLIPPING BITS */
 
 
 #include <assert.h>
