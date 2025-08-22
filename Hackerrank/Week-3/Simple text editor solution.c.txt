@@ -1,0 +1,75 @@
+/*Simple text editor solution*/
+
+
+
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+#define MAX_LEN 1000000
+
+typedef struct {
+    int type;
+    char* data;
+} Operation;
+int main() {
+/* Enter your code here. Read input from STDIN. Print output to STDOUT */ 
+    int Q;
+    scanf("%d", &Q);
+
+    char* text = (char*)malloc(MAX_LEN * sizeof(char));
+    text[0] = '\0';
+    int len = 0;
+
+    Operation* stack = (Operation*)malloc(Q * sizeof(Operation));
+    int top = -1;
+
+    for (int i = 0; i < Q; i++) {
+        int type;
+        scanf("%d", &type);
+
+        if (type == 1) {
+            char buffer[MAX_LEN];
+            scanf("%s", buffer);
+            int l = strlen(buffer);
+            stack[++top].type = 1;
+            stack[top].data = strdup(buffer);
+            strcpy(text + len, buffer);
+            len += l;
+            text[len] = '\0';
+        } else if (type == 2) {
+            int k;
+            scanf("%d", &k);
+            stack[++top].type = 2;
+            stack[top].data = (char*)malloc((k + 1) * sizeof(char));
+            strncpy(stack[top].data, text + len - k, k);
+            stack[top].data[k] = '\0';
+            len -= k;
+            text[len] = '\0';
+        } else if (type == 3) {
+            int k;
+            scanf("%d", &k);
+            printf("%c\n", text[k - 1]);
+        } else if (type == 4) {
+            if (top >= 0) {
+                Operation op = stack[top--];
+                if (op.type == 1) {
+                    int l = strlen(op.data);
+                    len -= l;
+                    text[len] = '\0';
+                } else if (op.type == 2) {
+                    int l = strlen(op.data);
+                    strcpy(text + len, op.data);
+                    len += l;
+                    text[len] = '\0';
+                }
+                free(op.data);
+            }
+        }
+    }
+
+    free(text);
+    free(stack);   
+    return 0;
+}
