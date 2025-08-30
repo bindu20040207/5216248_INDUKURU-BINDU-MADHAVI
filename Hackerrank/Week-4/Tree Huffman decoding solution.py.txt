@@ -1,0 +1,23 @@
+# Tree Huffman decoding solution
+
+
+
+
+
+"""class Node:
+    def __init__(self, freq,data):
+        self.freq= freq
+        self.data=data
+        self.left = None
+        self.right = None
+"""        
+
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+def decodeHuff(root, s):
+     cur = root
+     for bit in s:
+        cur = cur.left if bit == '0' else cur.right
+        if cur.left is None and cur.right is None:
+            print(cur.data, end="")
+            cur = root
+
